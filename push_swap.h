@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:26:09 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/23 19:23:19 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/23 20:19:55 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 typedef struct s_lst
 {
 	long long		data;
+	int				index;
 	struct s_lst	*next;
 }	t_lst;
 
@@ -48,5 +49,7 @@ void	rra(t_box *box, bool print);
 void	rrr(t_box *box, bool print);
 void	rrb(t_box *box, bool print);
 void	rra(t_box *box, bool print);
+void	add_index(t_lst *lst);
+void	radix_sort(t_box *box);
 
 #endif

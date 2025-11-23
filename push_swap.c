@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:25:57 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/23 19:23:07 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/23 20:19:44 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ int	main(int argc, char **argv)
 		validate(&argv[1], box.a);
 		box.size_a = argc - 1;
 	}
-	rra(&box, true);
+	add_index(box.a);
+	radix_sort(&box);
 }
