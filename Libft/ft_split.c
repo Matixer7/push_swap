@@ -6,13 +6,13 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 17:23:58 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/16 16:04:34 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/23 16:33:45 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(const char *s, char c)
+size_t	count_words(const char *s, char c)
 {
 	size_t	i;
 	size_t	count;

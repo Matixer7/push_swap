@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:26:09 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/22 17:09:53 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/23 19:23:19 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "Libft/libft.h"
 # include <stdlib.h>
 # include <limits.h>
+# include <stdbool.h>
 
 
 typedef struct s_lst
@@ -25,7 +26,27 @@ typedef struct s_lst
 	struct s_lst	*next;
 }	t_lst;
 
-int	error_msg(char *msg);
-int	validate(char **argv, t_lst *data);
+typedef struct s_box
+{
+	int		size_a;
+	int		size_b;
+	t_lst	*a;
+	t_lst	*b;
+}	t_box;
+
+int		error_msg(char *msg);
+int		validate(char **argv, t_lst *data);
+void	sa(t_box *box, bool print);
+void	sb(t_box *box, bool print);
+void	ss(t_box *box);
+void	pa(t_box *box, bool print);
+void	pb(t_box *box, bool print);
+void	rr(t_box *box);
+void	rb(t_box *box, bool print);
+void	ra(t_box *box, bool print);
+void	rra(t_box *box, bool print);
+void	rrr(t_box *box, bool print);
+void	rrb(t_box *box, bool print);
+void	rra(t_box *box, bool print);
 
 #endif
