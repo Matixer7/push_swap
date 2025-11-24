@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:26:09 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/23 20:19:55 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/24 18:34:29 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ typedef struct s_box
 	t_lst	*b;
 }	t_box;
 
-int		error_msg(char *msg);
-int		validate(char **argv, t_lst *data);
+int		error_msg(char *msg, t_box *box);
+int		validate(char **argv, t_lst *data, t_box *box);
 void	sa(t_box *box, bool print);
 void	sb(t_box *box, bool print);
 void	ss(t_box *box);
