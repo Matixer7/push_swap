@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:25:57 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/24 18:36:04 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/25 19:18:54 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int	main(int argc, char **argv)
 	if (argc >= 3)
 		box.size_a = validate(&argv[1], box.a, &box);
 	add_index(box.a);
-	radix_sort(&box);
+	if (!check(&box))
+		radix_sort(&box);
 	ft_exit(&box);
 }

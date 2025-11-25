@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:26:09 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/24 18:34:29 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/25 18:56:45 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ void	rrb(t_box *box, bool print);
 void	rra(t_box *box, bool print);
 void	add_index(t_lst *lst);
 void	radix_sort(t_box *box);
+int		check(t_box *box);
 
 #endif
