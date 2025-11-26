@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:57:25 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/25 19:01:41 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/26 18:18:13 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	sort_three(t_box *box)
 	int	second;
 	int	third;
 
-	second = box->a->index;
-	first = box->a->next->index;
+	first = box->a->index;
+	second = box->a->next->index;
 	third = box->a->next->next->index;
 	if (first > second && second < third && first < third)
 		sa(box, true);
@@ -79,7 +79,7 @@ void	sort_five(t_box *box)
 	a = box->a;
 	index = 0;
 	size = box->size_a;
-	while (++i <= size - 3)
+	while (++i < size - 3)
 	{
 		while (a->index != index)
 		{
@@ -87,6 +87,7 @@ void	sort_five(t_box *box)
 				ra(box, true);
 			else
 				rra(box, true);
+			a = box->a;
 		}
 		pb(box, true);
 		index++;
@@ -100,6 +101,8 @@ int	check(t_box *box)
 {
 	if (sorted(box->a))
 		return (1);
+	if (box->size_a == 2)
+		sa(box, true);
 	if (box->size_a == 3)
 		sort_three(box);
 	if (box->size_a == 5)

@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:30:57 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/24 18:35:38 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/26 17:47:42 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ long long	ft_atol(char *s, t_box *box)
 	n = 0;
 	sign = 1;
 	if (!s || !s[0])
-		return (error_msg("Found incorrect data!1\n", box));
+		return (error_msg("Found incorrect data!\n", box));
 	if (s[0] == '-')
 	{
 		sign = -sign;
@@ -57,11 +57,11 @@ long long	ft_atol(char *s, t_box *box)
 	while (s[++i])
 	{
 		if (!(s[i] >= '0' && s[i] <= '9'))
-			return (error_msg("Found incorrect data!1\n", box));
+			return (error_msg("Found incorrect data!\n", box));
 		n = n * 10 + (s[i] - 48);
 	}
 	if ((n * sign) > INT_MAX || (n * sign) < INT_MIN)
-		return (error_msg("Found incorrect data!2\n", box));
+		return (error_msg("Found incorrect data!\n", box));
 	return (n * sign);
 }
 

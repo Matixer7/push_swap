@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:25:57 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/25 19:18:54 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/26 18:16:16 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 static void	clear_tlst(t_lst **lst)
 {
-	t_lst	*cur;
-	t_lst	*next;
+	t_lst	*tmp;
 
-	if (!lst || !*lst)
+	if (!lst)
 		return ;
-	cur = *lst;
-	while (cur)
+	tmp = *lst;
+	while (*lst)
 	{
-		next = cur->next;
-		free(cur);
-		cur = next;
+		tmp = (*lst)->next;
+		free(*lst);
+		*lst = tmp;
 	}
 	*lst = NULL;
 }
@@ -32,17 +31,27 @@ static void	clear_tlst(t_lst **lst)
 int	ft_exit(t_box *box)
 {
 	t_lst	*tmp;
+	char	**s;
+	int		i;
 
 	if (!box)
 		exit(0);
-	tmp = box->a->next;
+	tmp = box->a;
 	if (tmp)
 		clear_tlst(&tmp);
 	tmp = NULL;
 	if (box->size_b != 0)
-		tmp = box->b->next;
+		tmp = box->b;
 	if (tmp)
 		clear_tlst(&tmp);
+	if (box->split)
+	{
+		s = box->split;
+		i = -1;
+		while (s && s[++i])
+			free(s[i]);
+		free(box->split);
+	}
 	exit(0);
 }
 
@@ -60,20 +69,19 @@ int	error_msg(char *msg, t_box *box)
 int	main(int argc, char **argv)
 {
 	t_box	box;
-	t_lst	a;
 	t_lst	b;
-	char	**split_result;
 
-	box.a = &a;
+	box.a = malloc(sizeof(t_lst));
+	box.a->next = NULL;
+	box.split = NULL;
 	box.b = &b;
 	box.size_b = 0;
 	if (argc < 2)
-		return (ft_printf("Not enough arguments given\n"), 0);
+		return (error_msg("Not enough arguments given\n", &box), 0);
 	if (argc == 2)
 	{
-		split_result = ft_split(argv[1], ' ');
-		box.size_a = validate(split_result, box.a, &box);
-		free(split_result);
+		box.split = ft_split(argv[1], ' ');
+		box.size_a = validate(box.split, box.a, &box);
 	}
 	if (argc >= 3)
 		box.size_a = validate(&argv[1], box.a, &box);

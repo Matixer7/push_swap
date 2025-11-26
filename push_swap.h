@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:26:09 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/25 18:56:45 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/26 18:12:24 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_lst
 
 typedef struct s_box
 {
+	char 	**split;
 	int		size_a;
 	int		size_b;
 	t_lst	*a;
