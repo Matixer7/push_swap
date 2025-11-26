@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:26:09 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/26 18:12:24 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/26 19:19:02 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <limits.h>
 # include <stdbool.h>
 
-
 typedef struct s_lst
 {
 	long long		data;
@@ -29,7 +28,7 @@ typedef struct s_lst
 
 typedef struct s_box
 {
-	char 	**split;
+	char	**split;
 	int		size_a;
 	int		size_b;
 	t_lst	*a;

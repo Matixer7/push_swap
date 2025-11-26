@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:57:25 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/26 18:18:13 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/26 18:58:44 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	get_pos(t_lst *lst, int index)
 		if (lst->index == index)
 			return (pos);
 		lst = lst->next;
+		pos++;
 	}
 	return (-1);
 }
