@@ -6,7 +6,7 @@
 /*   By: mgumienn <mgumienn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:25:57 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/11/26 18:16:16 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/11/26 19:25:12 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ int	main(int argc, char **argv)
 	{
 		box.split = ft_split(argv[1], ' ');
 		box.size_a = validate(box.split, box.a, &box);
+		if (box.size_a == 1)
+			return (error_msg("Not enough arguments given\n", &box), 0);
 	}
 	if (argc >= 3)
 		box.size_a = validate(&argv[1], box.a, &box);
